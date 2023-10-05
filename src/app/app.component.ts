@@ -7,8 +7,6 @@ import {initFlowbite} from "flowbite";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'MovieLab';
-
   ngOnInit(): void {
     initFlowbite();
   }

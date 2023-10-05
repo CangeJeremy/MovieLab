@@ -1,0 +1,21 @@
+<main class="container max-w-9xl p-6 mx-auto my-6">
+  <div class="grid grid-cols-4 gap-4" *ngIf="movie">
+    <div>
+      <img [src]="getMoviePoster(movie)" alt="{{ movie.title }}" class="rounded-3xl shadow-xl mx-auto">
+    </div>
+    <div class="col-span-3 px-12">
+      <h1 class="text-5xl font-bold">{{ movie.title }}</h1>
+      <div class="grid grid-cols-6 mt-2">
+        <p>Release: {{ movie.release_date }}</p>
+        <p>Note: {{ movie.vote_average }}</p>
+        <p> </p>
+      </div>
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe width="560" height="315" src="{{ trailerLink }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="my-6">
+        {{ movie.overview }}
+      </p>
+    </div>
+  </div>
+</main>
