@@ -40,4 +40,9 @@ export class TmdbService {
     const endpoint = `${this.apiUrl}/search/movie?api_key=${this.apiKey}&query=${query}`;
     return this._http.get(endpoint);
   }
+
+  getSimilarMovies(movieId: number): Observable<any> {
+    const endpoint = `${this.apiUrl}/movie/${movieId}/similar?api_key=${this.apiKey}`;
+    return this._http.get(endpoint);
+  }
 }

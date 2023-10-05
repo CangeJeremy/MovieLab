@@ -11,6 +11,7 @@ import { DetailsComponent } from './pages/movies/details/details.component';
 import { SimilarComponent } from './pages/movies/similar/similar.component';
 import { TruncatePipe } from './shared/pipes/truncate.pipe';
 import {FormsModule} from "@angular/forms";
+import { SafeResourceUrlPipe } from './shared/pipes/safe-resource-url.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     SearchComponent,
     DetailsComponent,
     SimilarComponent,
-    TruncatePipe
+    TruncatePipe,
+    SafeResourceUrlPipe
   ],
   imports: [
     BrowserModule,
