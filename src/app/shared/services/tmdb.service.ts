@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class TmdbService {
-  private apiKey: string = "b15bcc53eb05430aa6a251760df00d38";
+  private apiKey: string = "GET_YOUR_OWN_KEY";
   private apiUrl: string = "https://api.themoviedb.org/3";
 
   constructor(private _http: HttpClient) { }
