@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {TmdbService} from "../../../shared/services/tmdb.service";
 import {Movie} from "../../../shared/models/movie.model";
 
@@ -7,7 +7,7 @@ import {Movie} from "../../../shared/models/movie.model";
   templateUrl: './similar.component.html',
   styleUrls: ['./similar.component.scss']
 })
-export class SimilarComponent implements OnInit {
+export class SimilarComponent implements OnInit, OnChanges {
   @Input() movieId: number | null = null;
   similarMovies: any[] = [];
 
@@ -19,6 +19,11 @@ export class SimilarComponent implements OnInit {
         this.similarMovies = similarMovies.results.slice(0, 4);
       });
     }
+  }
+
+  ngOnChanges(){
+    this.ngOnInit();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
   getMoviePoster(movie: Movie): string {
